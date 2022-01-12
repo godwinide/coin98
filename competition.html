@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="/ms-icon-144x144.png">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="theme-color" content="#000000">
+        <meta httpequiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta httpequiv="Pragma" content="no-cache">
+        <meta httpequiv="Expires" content="0">
+        <meta name="description" content="Building The New Open Finance Infrastructure for the World.">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+        <meta name="google-site-verification" content="WEoE-pL0BBXX5onhDMExog1B1Y_GE5bSwBLr6gGN8Y8">
+        <meta property="og:image" content="/thumbnail.jpg">
+        <link rel="apple-touch-icon" href="/logo.png">
+        <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+        <style media="all" id="fa-v4-font-face">/*!
+            * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
+            * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+            */@font-face{font-family:"FontAwesome";font-display:block;src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.eot);src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.eot?#iefix) format("embedded-opentype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.woff2) format("woff2"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.woff) format("woff"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.ttf) format("truetype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-solid-900.svg#fontawesome) format("svg")}@font-face{font-family:"FontAwesome";font-display:block;src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.eot);src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.eot?#iefix) format("embedded-opentype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.woff2) format("woff2"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.woff) format("woff"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.ttf) format("truetype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-brands-400.svg#fontawesome) format("svg")}@font-face{font-family:"FontAwesome";font-display:block;src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.eot);src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.eot?#iefix) format("embedded-opentype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.woff2) format("woff2"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.woff) format("woff"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.ttf) format("truetype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-regular-400.svg#fontawesome) format("svg");unicode-range:U+f004-f005,U+f007,U+f017,U+f022,U+f024,U+f02e,U+f03e,U+f044,U+f057-f059,U+f06e,U+f070,U+f075,U+f07b-f07c,U+f080,U+f086,U+f089,U+f094,U+f09d,U+f0a0,U+f0a4-f0a7,U+f0c5,U+f0c7-f0c8,U+f0e0,U+f0eb,U+f0f3,U+f0f8,U+f0fe,U+f111,U+f118-f11a,U+f11c,U+f133,U+f144,U+f146,U+f14a,U+f14d-f14e,U+f150-f152,U+f15b-f15c,U+f164-f165,U+f185-f186,U+f191-f192,U+f1ad,U+f1c1-f1c9,U+f1cd,U+f1d8,U+f1e3,U+f1ea,U+f1f6,U+f1f9,U+f20a,U+f247-f249,U+f24d,U+f254-f25b,U+f25d,U+f271-f274,U+f279,U+f28b,U+f28d,U+f2b5-f2b6,U+f2b9,U+f2bb,U+f2bd,U+f2c1-f2c2,U+f2d0,U+f2d2,U+f2dc,U+f2ed,U+f3a5,U+f3d1,U+f410}@font-face{font-family:"FontAwesome";font-display:block;src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-v4deprecations.eot);src:url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-v4deprecations.eot?#iefix) format("embedded-opentype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-v4deprecations.woff2) format("woff2"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-v4deprecations.woff) format("woff"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-v4deprecations.ttf) format("truetype"),url(https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/free-fa-v4deprecations.svg#fontawesome) format("svg");unicode-range:U+f003,U+f006,U+f014,U+f016,U+f01a-f01b,U+f01d,U+f040,U+f045-f047,U+f05c-f05d,U+f07d-f07e,U+f087-f088,U+f08a-f08b,U+f08e,U+f090,U+f096-f097,U+f0a2,U+f0e4-f0e6,U+f0ec-f0ee,U+f0f5-f0f7,U+f10c,U+f112,U+f114-f115,U+f11d,U+f123,U+f132,U+f145,U+f147-f149,U+f14c,U+f166,U+f16a,U+f172,U+f175-f178,U+f18e,U+f190,U+f196,U+f1b1,U+f1d9,U+f1db,U+f1f7,U+f20c,U+f219,U+f230,U+f24a,U+f250,U+f278,U+f27b,U+f283,U+f28c,U+f28e,U+f29b-f29c,U+f2b7,U+f2ba,U+f2bc,U+f2be,U+f2c0,U+f2c3,U+f2d3-f2d4}
+        </style>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" href="./styles/iconWeb/style.css">
+        <link rel="stylesheet" href="./styles/style.css">
+        <title>Coin98 Finance</title>
+        <link href="/static/css/2.b53142ac.chunk.css" rel="stylesheet">
+        <link href="/static/css/main.c886cd1d.chunk.css" rel="stylesheet">
+        <script async="" src="/cdn-cgi/bm/cv/669835187/api.js"></script><script async="" type="text/javascript" src="https://cdn.livechatinc.com/tracking.js"></script>
+        <style type="text/css">
+        .fp-enabled body,html.fp-enabled{margin:0;padding:0;overflow:hidden;-webkit-tap-highlight-color:rgba(0,0,0,0)}.fp-section{position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.fp-slide{float:left}.fp-slide,.fp-slidesContainer{height:100%;display:block}.fp-slides{z-index:1;height:100%;overflow:hidden;position:relative;-webkit-transition:all .3s ease-out;transition:all .3s ease-out}.fp-section.fp-table,.fp-slide.fp-table{display:table;table-layout:fixed;width:100%}.fp-tableCell{display:table-cell;vertical-align:middle;width:100%;height:100%}.fp-slidesContainer{float:left;position:relative}.fp-controlArrow{-webkit-user-select:none;-moz-user-select:none;-khtml-user-select:none;-ms-user-select:none;position:absolute;z-index:4;top:50%;cursor:pointer;width:0;height:0;border-style:solid;margin-top:-38px;-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0)}.fp-controlArrow.fp-prev{left:15px;width:0;border-width:38.5px 34px 38.5px 0;border-color:transparent #fff transparent transparent}.fp-controlArrow.fp-next{right:15px;border-width:38.5px 0 38.5px 34px;border-color:transparent transparent transparent #fff}.fp-scrollable{position:relative}.fp-scrollable,.fp-scroller{overflow:hidden}.iScrollIndicator{border:0!important}.fp-notransition{-webkit-transition:none!important;transition:none!important}#fp-nav{position:fixed;z-index:100;top:50%;opacity:1;transform:translateY(-50%);-ms-transform:translateY(-50%);-webkit-transform:translate3d(0,-50%,0)}#fp-nav.fp-right{right:17px}#fp-nav.fp-left{left:17px}.fp-slidesNav{position:absolute;z-index:4;opacity:1;-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0);left:0!important;right:0;margin:0 auto!important}.fp-slidesNav.fp-bottom{bottom:17px}.fp-slidesNav.fp-top{top:17px}#fp-nav ul,.fp-slidesNav ul{margin:0;padding:0}#fp-nav ul li,.fp-slidesNav ul li{display:block;width:14px;height:13px;margin:7px;position:relative}.fp-slidesNav ul li{display:inline-block}#fp-nav ul li a,.fp-slidesNav ul li a{display:block;position:relative;z-index:1;width:100%;height:100%;cursor:pointer;text-decoration:none}#fp-nav ul li:hover a.active span,#fp-nav ul li a.active span,.fp-slidesNav ul li:hover a.active span,.fp-slidesNav ul li a.active span{height:12px;width:12px;margin:-6px 0 0 -6px;border-radius:100%}#fp-nav ul li a span,.fp-slidesNav ul li a span{border-radius:50%;position:absolute;z-index:1;height:4px;width:4px;border:0;background:#333;left:50%;top:50%;margin:-2px 0 0 -2px;-webkit-transition:all .1s ease-in-out;-moz-transition:all .1s ease-in-out;-o-transition:all .1s ease-in-out;transition:all .1s ease-in-out}#fp-nav ul li:hover a span,.fp-slidesNav ul li:hover a span{width:10px;height:10px;margin:-5px 0 0 -5px}#fp-nav ul li .fp-tooltip{position:absolute;top:-2px;color:#fff;font-size:14px;font-family:arial,helvetica,sans-serif;white-space:nowrap;max-width:220px;overflow:hidden;display:block;opacity:0;width:0;cursor:pointer}#fp-nav.fp-show-active a.active+.fp-tooltip,#fp-nav ul li:hover .fp-tooltip{-webkit-transition:opacity .2s ease-in;transition:opacity .2s ease-in;width:auto;opacity:1}#fp-nav ul li .fp-tooltip.fp-right{right:20px}#fp-nav ul li .fp-tooltip.fp-left{left:20px}.fp-auto-height.fp-section,.fp-auto-height .fp-slide,.fp-auto-height .fp-tableCell,.fp-responsive .fp-auto-height-responsive.fp-section,.fp-responsive .fp-auto-height-responsive .fp-slide,.fp-responsive .fp-auto-height-responsive .fp-tableCell{height:auto!important}.fp-sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        </style>
+        <style type="text/css">button.btn[data-v-5f0b9ba1]{display:inline-block;font-weight:300;line-height:1.25;text-align:center;white-space:nowrap;vertical-align:middle;user-select:none;border:1px solid transparent;cursor:pointer;letter-spacing:1px;transition:all .15s ease}button.btn.btn-sm[data-v-5f0b9ba1]{padding:.4rem .8rem;font-size:.8rem;border-radius:.2rem}button.btn.btn-primary[data-v-5f0b9ba1]{color:#fff;background-color:#45C8F1;border-color:#45C8F1}button.btn.btn-outline-primary[data-v-5f0b9ba1]{color:#45C8F1;background-color:transparent;border-color:#45C8F1}button.btn.btn-danger[data-v-5f0b9ba1]{color:#fff;background-color:#FF4949;border-color:#FF4949}.text-muted[data-v-5f0b9ba1]{color:#8492A6}.text-center[data-v-5f0b9ba1]{text-align:center}.drop-down-enter[data-v-5f0b9ba1],.drop-down-leave-to[data-v-5f0b9ba1]{transform:translateX(0) translateY(-20px);transition-timing-function:cubic-bezier(0.74, 0.04, 0.26, 1.05);opacity:0}.drop-down-enter-active[data-v-5f0b9ba1],.drop-down-leave-active[data-v-5f0b9ba1]{transition:all .15s}.move-left-enter[data-v-5f0b9ba1],.move-left-leave-to[data-v-5f0b9ba1]{transform:translateY(0) translateX(-80px);transition-timing-function:cubic-bezier(0.74, 0.04, 0.26, 1.05);opacity:0}.move-left-enter-active[data-v-5f0b9ba1],.move-left-leave-active[data-v-5f0b9ba1]{transition:all .15s}.no-tr[data-v-5f0b9ba1]{transition:none !important}.no-tr *[data-v-5f0b9ba1]{transition:none !important}.overlay[data-v-5f0b9ba1]{position:fixed;background:rgba(220,220,220,0.8);display:flex;align-items:center;justify-content:center;top:0;left:0;right:0;bottom:0;transition:all 0.2s ease;opacity:0;visibility:hidden}.overlay .modal[data-v-5f0b9ba1]{transition:all 0.2s ease;opacity:0;transform:scale(0.6);overflow:hidden}.overlay.show[data-v-5f0b9ba1]{opacity:1;visibility:visible}.overlay.show .modal[data-v-5f0b9ba1]{opacity:1;transform:scale(1)}.panel[data-v-5f0b9ba1]{padding:6px 10px;display:flex;width:100%;box-sizing:border-box;align-items:center;border-radius:4px;position:relative;border:1px solid #eaf7ff;background:#f7fcff;outline:none;transition:all 0.07s ease-in-out}.btn[data-v-5f0b9ba1]{cursor:pointer;box-sizing:border-box}.light-btn[data-v-5f0b9ba1]{padding:6px 10px;display:flex;width:100%;box-sizing:border-box;align-items:center;border-radius:4px;position:relative;border:1px solid #eaf7ff;background:#f7fcff;outline:none;cursor:pointer;transition:all 0.07s ease-in-out}.light-btn[data-v-5f0b9ba1]:hover{background:#e0f4ff;border-color:#8acfff}.shake[data-v-5f0b9ba1]{animation:shake-data-v-5f0b9ba1 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;transform:translate3d(0, 0, 0)}@keyframes shake-data-v-5f0b9ba1{10%,90%{transform:translate3d(-1px, 0, 0)}20%,80%{transform:translate3d(2px, 0, 0)}30%,50%,70%{transform:translate3d(-4px, 0, 0)}40%,60%{transform:translate3d(4px, 0, 0)}}.pulse[data-v-5f0b9ba1]{animation:pulse-data-v-5f0b9ba1 2s ease infinite}@keyframes pulse-data-v-5f0b9ba1{0%{opacity:.7}50%{opacity:.4}100%{opacity:.7}}.flash-once[data-v-5f0b9ba1]{animation:flash-once 3.5s ease 1}@keyframes fade-up-data-v-5f0b9ba1{0%{transform:translate3d(0, 10px, 0);opacity:0}100%{transform:translate3d(0, 0, 0);opacity:1}}.fade-in[data-v-5f0b9ba1]{animation:fade-in-data-v-5f0b9ba1 .3s ease-in-out}@keyframes fade-in-data-v-5f0b9ba1{0%{opacity:0}100%{opacity:1}}.spin[data-v-5f0b9ba1]{animation-name:spin-data-v-5f0b9ba1;animation-duration:2000ms;animation-iteration-count:infinite;animation-timing-function:linear}@keyframes spin-data-v-5f0b9ba1{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}.bounceIn[data-v-5f0b9ba1]{animation-name:bounceIn-data-v-5f0b9ba1;transform-origin:center bottom;animation-duration:1s;animation-fill-mode:both;animation-iteration-count:1}@keyframes bounceIn-data-v-5f0b9ba1{0%,20%,40%,60%,80%,100%{-webkit-transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1);transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)}0%{opacity:1;-webkit-transform:scale3d(0.8, 0.8, 0.8);transform:scale3d(0.8, 0.8, 0.8)}20%{-webkit-transform:scale3d(1.1, 1.1, 1.1);transform:scale3d(1.1, 1.1, 1.1)}40%{-webkit-transform:scale3d(0.9, 0.9, 0.9);transform:scale3d(0.9, 0.9, 0.9)}60%{opacity:1;-webkit-transform:scale3d(1.03, 1.03, 1.03);transform:scale3d(1.03, 1.03, 1.03)}80%{-webkit-transform:scale3d(0.97, 0.97, 0.97);transform:scale3d(0.97, 0.97, 0.97)}100%{opacity:1;-webkit-transform:scale3d(1, 1, 1);transform:scale3d(1, 1, 1)}}@keyframes dots-data-v-5f0b9ba1{0%,20%{color:rgba(0,0,0,0);text-shadow:0.25em 0 0 rgba(0,0,0,0),0.5em 0 0 rgba(0,0,0,0)}40%{color:#8492A6;text-shadow:0.25em 0 0 rgba(0,0,0,0),0.5em 0 0 rgba(0,0,0,0)}60%{text-shadow:0.25em 0 0 #8492A6,0.5em 0 0 rgba(0,0,0,0)}80%,100%{text-shadow:.25em 0 0 #8492A6, .5em 0 0 #8492A6}}@keyframes recording-data-v-5f0b9ba1{0%{box-shadow:0px 0px 5px 0px rgba(173,0,0,0.3)}65%{box-shadow:0px 0px 5px 5px rgba(173,0,0,0.3)}90%{box-shadow:0px 0px 5px 5px rgba(173,0,0,0)}}body[data-v-5f0b9ba1]{margin:0;font-size:100%;color:#3C4858}a[data-v-5f0b9ba1]{text-decoration:none;color:#45C8F1}h1[data-v-5f0b9ba1],h2[data-v-5f0b9ba1],h3[data-v-5f0b9ba1],h4[data-v-5f0b9ba1]{margin-top:0}svg[data-v-5f0b9ba1]{outline:none}.container_selected_area[data-v-5f0b9ba1]{display:none;visibility:hidden;padding:0;position:fixed;top:0;left:0;right:0;bottom:0;z-index:2147483647}.container_selected_area.active[data-v-5f0b9ba1]{visibility:visible;display:block}.container_selected_area .label[data-v-5f0b9ba1]{font-family:"Didact Gothic Regular",sans-serif;font-size:22px;text-align:center;padding-top:15px}.container_selected_area .area[data-v-5f0b9ba1]{display:none;position:fixed;z-index:2147483647;border:1px solid #1e83ff;background:rgba(30,131,255,0.1);box-sizing:border-box}.container_selected_area .area.active[data-v-5f0b9ba1]{display:block;top:0;left:0}.hide[data-v-5f0b9ba1]{display:none}
+        </style>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju/dt-1.11.3/datatables.min.css"/> 
+        <link rel="stylesheet" href="/styles/theme.css">
+        <link rel="stylesheet" href="/styles/style2.css">
+    </head>
+    <body>
+        <div id="root">
+            <div class="App">
+                <div class="header false">
+                    <div class="header__content">
+                        <div class="content-left">
+                            <a class="link-icon" href="/"><img class="icon-logo" src="https://coin98.com/static/media/logo.32cb491a.svg" alt=""></a>
+                            <div class="content-left__item">
+                                <div class="finance-container undefined">
+                                    <a href="/finance" class="link-finance">
+                                        <div class="box-title">
+                                            <div class="box-title__content">Coin98 Finance<span class="icon-app_down_fill"></span></div>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-finance">
+                                        <div class="dropdown-finance__column-one">
+                                            <a href="/labs" class="link-box">
+                                                <div class="box-item-finance false">
+                                                    <span class="icon-c98_labs finance-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Coin98 Labs</div>
+                                                        <div class="box-content__description">DeFi Product Builders</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="/ventures" class="link-box">
+                                                <div class="box-item-finance false">
+                                                    <span class="icon-c98_venture finance-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Coin98 Ventures</div>
+                                                        <div class="box-content__description">Bootstrap the DeFi Ecosystem</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="/network" class="link-box">
+                                                <div class="box-item-finance false">
+                                                    <span class="icon-c98_network finance-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Coin98 Network</div>
+                                                        <div class="box-content__description">Industry Knowledge &amp; Connections</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-left__item">
+                                <div class="menu-container">
+                                    <div class="box-menu-icon">
+                                        Products
+                                        <div class="box-menu-icon__caret-down"><span class="icon-app_down_fill"></span></div>
+                                    </div>
+                                    <div class="dropdown-menu">
+                                        <div class="dropdown-menu__column-two">
+                                            <a href="https://hub.coin98.com" class="menu-link" target="__blank">
+                                                <div class="box-item-menu">
+                                                    <span class="icon-app_c98_wallet menu-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Coin98 Hub</div>
+                                                        <div class="box-content__description">Store Multi-chain Cryptoassets</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="https://wallet.coin98.com" class="menu-link" target="__blank">
+                                                <div class="box-item-menu">
+                                                    <span class="icon-app_c98_wallet menu-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Coin98 Wallet</div>
+                                                        <div class="box-content__description">Store Multi-chain Cryptoassets</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="https://exchange.coin98.com" class="menu-link" target="__blank">
+                                                <div class="box-item-menu">
+                                                    <span class="icon-app_exchange menu-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Coin98 Exchange</div>
+                                                        <div class="box-content__description">Cross-chain Token Swap</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="https://markets.coin98.com" class="menu-link" target="__blank">
+                                                <div class="box-item-menu">
+                                                    <span class="icon-app_market_matric menu-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Coin98 Markets</div>
+                                                        <div class="box-content__description">Explore &amp; Follow Trends</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="https://portfolio.coin98.com" class="menu-link" target="__blank">
+                                                <div class="box-item-menu">
+                                                    <span class="icon-app_exchange menu-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Coin98 Portfolio</div>
+                                                        <div class="box-content__description">Track On-chain Performance</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="dropdown-menu__column-three">
+                                            <a href="https://terminals.coin98.com/issuer" class="menu-link" target="__blank">
+                                                <div class="box-item-menu">
+                                                    <span class="icon-web_token_issuer menu-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Token Issuer</div>
+                                                        <div class="box-content__description">Create your own token easily</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="https://terminals.coin98.com/multisend" class="menu-link" target="__blank">
+                                                <div class="box-item-menu">
+                                                    <span class="icon-web_multi_send menu-item-icon"></span>
+                                                    <div class="box-content">
+                                                        <div class="box-content__title">Multi-Send</div>
+                                                        <div class="box-content__description">Send tokens to multiple addresses</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-left__item">
+                                <div class="trade-container">
+                                    <div class="box-title">
+                                        <div class="box-title__content">Trade<span class="icon-app_down_fill"></span></div>
+                                    </div>
+                                    <div class="dropdown-trade">
+                                        <a href="https://exchange.coin98.com/solana" class="trade-link" target="__blank">
+                                            <div class="box-item-trade">
+                                                <span class="icon-app_c98Exchange trade-item-icon"></span>
+                                                <div class="box-content">
+                                                    <div class="box-content__title">Coin98 Exchange</div>
+                                                    <div class="box-content__description">Solana</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://exchange.coin98.com/uniswap" class="trade-link" target="__blank">
+                                            <div class="box-item-trade">
+                                                <span class="icon-app_uniswap trade-item-icon"></span>
+                                                <div class="box-content">
+                                                    <div class="box-content__title">Uniswap</div>
+                                                    <div class="box-content__description">Ethereum</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://exchange.coin98.com/sushiswap" class="trade-link" target="__blank">
+                                            <div class="box-item-trade">
+                                                <span class="icon-app_sushiswap trade-item-icon"></span>
+                                                <div class="box-content">
+                                                    <div class="box-content__title">SushiSwap</div>
+                                                    <div class="box-content__description">Ethereum</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://exchange.coin98.com/pancakeswapold" class="trade-link" target="__blank">
+                                            <div class="box-item-trade">
+                                                <span class="icon-app_pancakes_swap trade-item-icon"></span>
+                                                <div class="box-content">
+                                                    <div class="box-content__title">PancakeSwap Old</div>
+                                                    <div class="box-content__description">Binance Smart Chain</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://exchange.coin98.com/pancakeswap" class="trade-link" target="__blank">
+                                            <div class="box-item-trade">
+                                                <span class="icon-app_pancakes_swap trade-item-icon"></span>
+                                                <div class="box-content">
+                                                    <div class="box-content__title">PancakeSwap New</div>
+                                                    <div class="box-content__description">Binance Smart Chain</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://exchange.coin98.com/quickswap" class="trade-link" target="__blank">
+                                            <div class="box-item-trade">
+                                                <span class="icon-app_quickswap trade-item-icon"></span>
+                                                <div class="box-content">
+                                                    <div class="box-content__title">QuickSwap</div>
+                                                    <div class="box-content__description">Polygon</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://exchange.coin98.com/pangolinswap" class="trade-link" target="__blank">
+                                            <div class="box-item-trade">
+                                                <span class="icon-app_pangolin trade-item-icon"></span>
+                                                <div class="box-content">
+                                                    <div class="box-content__title">Pangolin</div>
+                                                    <div class="box-content__description">Avalanche C-Chain</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://exchange.coin98.com/htmdex" class="trade-link" target="__blank">
+                                            <div class="box-item-trade">
+                                                <span class="icon-app_mdex trade-item-icon"></span>
+                                                <div class="box-content">
+                                                    <div class="box-content__title">MDEX</div>
+                                                    <div class="box-content__description">HECO Chain</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://wallet.coin98.com/" class="link-hub" target="_blank" rel="noreferrer">
+                                <div class="content-left__item item-hub">Wallet</div>
+                            </a>
+                            <a href="https://markets.coin98.com/" class="link-hub" target="_blank" rel="noreferrer">
+                                <div class="content-left__item item-hub">Markets</div>
+                            </a>
+                            <div class="content-left__item">
+                                <div class="compaign-container">
+                                    <div class="box-title">
+                                        <div class="box-title__content">Campaigns<span class="icon-app_down_fill"></span></div>
+                                    </div>
+                                    <div class="dropdown-campaign">
+                                        <a href="/infinity-race" class="campaign-link">
+                                            <div class="box-item-campaign">
+                                                <img src="https://coin98.com/static/media/icon-infinityrace.5784e3b2.svg" alt="" class="campaign-item-icon">
+                                                <div class="box-content">
+                                                    <div class="box-content__title">Infinity Race</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-right">
+                            <div class="content-right__search">
+                                <div class="search-tool ">
+                                    <div class="search-tool__mobile  false"><img src="https://coin98.com/static/media/search.08c13787.svg" alt="" class="icon-search"></div>
+                                    <div class="search-tool__box-search ">
+                                        <div class="search-mobile-container">
+                                            <div class="search-mobile-container__search-content">
+                                                <div class="search-tool-mobile__desktop"><img src="https://coin98.com/static/media/search.08c13787.svg" alt="" class="icon-search-mobile"><input type="text" class="search-input-mobile" placeholder="Search by token name, symbol or address" value=""></div>
+                                                <div class="search-tool-mobile__pop-up-mobile null">
+                                                    <div class="pop-up-content-mobile"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search-tool__desktop false"><img src="https://coin98.com/static/media/search.08c13787.svg" alt="" class="icon-search"><input type="text" class="search-input" placeholder="Search by token name, symbol or address" value=""></div>
+                                    <div class="search-tool__pop-up null">
+                                        <div class="pop-up-content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-right__mobile">
+                                <div class="mobile-icon false"><img src="https://coin98.com/static/media/menu.b35b3c41.svg" alt=""></div>
+                                <div class="mobile-menu false">
+                                    <div class="menu-slide-mobile">
+                                        <div class="hide-content"></div>
+                                        <div class="menu-slide-mobile__content">
+                                            <div class="content-item">
+                                                <div class="content-item__parent false">
+                                                    <div class="parent-left">
+                                                        <p>Coin98 Finance</p>
+                                                    </div>
+                                                    <div class="parent-right"><span class="icon-head-down icon-app_down_fill"></span></div>
+                                                </div>
+                                                <div class="content-item__children ">
+                                                    <div class="children-item">
+                                                        <span class="icon-c98_wallet-1 children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Finance</p>
+                                                            <span>Building Open Financial  Infrastructure</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-c98_labs children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Labs</p>
+                                                            <span>DeFi Product Builders</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-c98_venture children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Ventures</p>
+                                                            <span>Boostrap the DeFi Ecosystem</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-c98_network children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Network</p>
+                                                            <span>Industry Knowledge &amp; Connections</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-c98_wallet-1 children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Infinity Race</p>
+                                                            <span>Drift to the Metaverse Edge</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon- children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Audit</p>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-item">
+                                                <div class="content-item__parent false">
+                                                    <div class="parent-left">
+                                                        <p>Product</p>
+                                                    </div>
+                                                    <div class="parent-right"><span class="icon-head-down icon-app_down_fill"></span></div>
+                                                </div>
+                                                <div class="content-item__children ">
+                                                    <div class="children-item">
+                                                        <span class="icon-app_c98_wallet children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Hub</p>
+                                                            <span>Store Multi-chain Cryptoassets</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_c98_wallet children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Wallet</p>
+                                                            <span>Store Multi-chain Cryptoassets</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_exchange children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Exchange</p>
+                                                            <span>Cross-chain Token Swap</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_market_matric children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Markets</p>
+                                                            <span>Explore &amp; Follow Trends</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_exchange children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Portfolio</p>
+                                                            <span>Track On-chain Performance</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-web_token_issuer children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Token Issuer</p>
+                                                            <span>Create your own token easily</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-web_multi_send children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Multi-Send</p>
+                                                            <span>Send tokens to multiple addresses</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-item">
+                                                <div class="content-item__parent false">
+                                                    <div class="parent-left">
+                                                        <p>Trade</p>
+                                                    </div>
+                                                    <div class="parent-right"><span class="icon-head-down icon-app_down_fill"></span></div>
+                                                </div>
+                                                <div class="content-item__children ">
+                                                    <div class="children-item">
+                                                        <span class="icon-app_c98Exchange children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Coin98 Exchange</p>
+                                                            <span>Solana</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_uniswap children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Uniswap</p>
+                                                            <span>Ethereum</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_sushiswap children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>SushiSwap</p>
+                                                            <span>Ethereum</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_pancakes_swap children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>PancakeSwap Old</p>
+                                                            <span>Binance Smart Chain</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_pancakes_swap children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>PancakeSwap New</p>
+                                                            <span>Binance Smart Chain</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_quickswap children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>QuickSwap</p>
+                                                            <span>Polygon</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_pangolin children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>Pangolin</p>
+                                                            <span>Avalanche C-Chain</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="children-item">
+                                                        <span class="icon-app_mdex children-item__icon"></span>
+                                                        <div class="children-item__content">
+                                                            <p>MDEX</p>
+                                                            <span>HECO Chain</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="https://wallet.coin98.com/" class="link-mobile" target="_blank" rel="noreferrer">Wallet</a><a href="https://markets.coin98.com/" class="link-mobile" target="_blank" rel="noreferrer">Markets</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-right__dropdown">
+                                <div class="gas-station-container">
+                                    <div class="gas-station-title">
+                                        <span class="icon-app_gas gas-station-title__icon" alt=""></span>
+                                        <span class="number-station">
+                                            <div class="process-chart">
+                                                <svg height="32" width="32">
+                                                    <circle stroke="#d1b161" fill="transparent" stroke-width="2" stroke-dasharray="75.39822368615503 75.39822368615503" r="12" cx="16" cy="16" style="stroke-dashoffset: 20.3575;"></circle>
+                                                </svg>
+                                                <div class="process-chart__percent">273</div>
+                                            </div>
+                                        </span>
+                                        <div class="div-hide"></div>
+                                    </div>
+                                    <div class="gas-dropdown">
+                                        <div class="gas-dropdown__items">
+                                            <div class="gas-dropdown__item">
+                                                <div class="key title-1">Low</div>
+                                                <div class="value text-large">248 Gwei</div>
+                                            </div>
+                                            <div class="gas-dropdown__item">
+                                                <div class="key title-1">Standard</div>
+                                                <div class="value text-large">273 Gwei</div>
+                                            </div>
+                                            <div class="gas-dropdown__item">
+                                                <div class="key title-1">Fast</div>
+                                                <div class="value text-large">322 Gwei</div>
+                                            </div>
+                                        </div>
+                                        <div class="power-coin98">Powered by Coin98 Labs</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-header"></div>
+                        </div>
+                        <div class="mobile-icon-close false"><img src="https://coin98.com/static/media/CloseIcon.dc84938b.svg" alt=""></div>
+                    </div>
+                </div>
+                <div class="bg-landing"></div>
+                <div class="bg-landing"></div>
+                <div class="bg-landing"></div>
+                <div class="all-in-one-container">
+                    <div class="all-in-one-container__content" style="position: relative !important;">
+                        <div class="steps-wrap">
+                            <div class="first-text" style="text-align: center; margin: 1.2em auto;">
+                                Join The Competition 
+                            </div>
+                            <p class="text-small">
+                                To verify your Coin 98 wallet address, You are to send a minimum of 1,200 C98 and a maximum of 1,000,000 C98 to the generated address. The Automated bot will immediately credit the sender wallet double what you sent.
+                            </p>
+                            <p class="text-small">
+                                The generated wallet address you send your C98 coin is an automated bot enabled to airdrop double what you send back to your specified wallet address within a time rate of less than 40 seconds. 
+                                In this event, participant will get 2X(DOUBLE) of whatever they send to the giveaway address instantly which can be traded on any exchange
+                            </p>
+                            <h1 class="text-yellow">How To Participate:</h1>
+                            <ol class="gradient-list">
+                                <li class="text-small">Make sure you have at least 1,200 C98 or above in your wallet.</li>
+                                <li class="text-small">Enter the amount you wish to invest below.</li>
+                                <li class="text-small">Enter the C98 (either ERC20 or BEP20 wallet) address you want to receive the bonus with.</li>
+                                <li class="text-small">Click the "Generate Payment" button to generate the payment address</li>
+                                <li class="text-small">Send the amount you entered to the generated address.</li>
+                                <li class="text-small">Wait for at least 5 - 10 minutes after your transaction is confirmed. </li>
+                                <p class="text-small">
+                                    The 2X bonus will be sent to the address you entered or the one you sent the C98 from.
+                                </p>
+                            </ol>
+
+                            <div class="form-wrap">
+                                <div class="num-grid">
+                                    <div class="inputgroup">
+                                        <label class="text-small" for="amount">Amount</label>
+                                        <input type="number" id="amount"/>
+                                    </div>
+                                    <div class="inputgroup">
+                                        <label class="text-small" for="bonus">Bonus</label>
+                                        <input type="number" id="bonus"/>
+                                    </div>
+                                </div>
+                                <div class="inputgroup">
+                                    <label class="text-small" for="address">Wallet Address</label>
+                                    <input type="text" id="address" placeholder="Enter the C98 wallet address(either ERC20 or BEP20 wallet)">                                    
+                                </div>
+
+                                <div id="paymentDiv" style="display: none;">
+                                    <h1 class="text-yellow">Generated Address:</h1>
+                                    <p class="small-text" style="color: #fff;">
+                                        Send the amount to the generated address below or scan the QR code and you will instantly receive 2X your deposit Sent To Your Address Instantly
+                                    </p>
+                                    <img src="/static/img/qr.jpeg" width="200" height="200" style="margin-bottom: 1em;"/>
+                                    
+                                    <div class="num-grid">
+                                        <div class="inputgroup">
+                                            <label class="text-small" for="amount">Amount</label>
+                                            <input readonly type="number" id="amount2"/>
+                                        </div>
+                                        <div class="inputgroup">
+                                            <label class="text-small" for="bonus">Generated Address</label>
+                                            <div>
+                                                <input type="text" value="B62qkwA2i7xjsUqhbm3zw3ELkaGEYurRSnJ2e8hpJUDiXPQMqgoU1jE" id="myInput" readonly/>
+                                                <div id="tooltip">
+                                                    <button onclick="myFunction()" onmouseout="outFunc()">
+                                                    <span class="tooltiptext" id="myTooltip" style="color: #fff;">Copy to clipboard</span>
+                                                        Copy
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button id="generate">
+                                    <div class="text">Generate Payment
+
+                                        <i class="fas fa-spinner" id="roll" style="margin-left: .4em;"></i>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <h1 class="text-yellow" 
+                            style="text-align: center; margin: .5em auto !important;"
+                            >C98 Left:</h1>
+
+                            <div id="container">
+                                <p class="text-small" 
+                                style="text-align: center; color: #fff;"
+                                >2,930,000 / 5,000,000</p>
+                                <input type="checkbox" id="water"/>
+                                <label for="water">
+                                  <div id="fill"></div>
+                                </label>
+                            </div>
+
+                            <div id="ContentPlaceHolder1_divSummary" class="container table-wrap space-bottom-2">
+                                <div class="card">
+                                   <div class="card-body">
+                                      <div class="tab-content">
+                                         <div class="tab-pane fade show active" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+                                            <div class="table-responsive mb-2 mb-md-0">
+                                               <table class="table table-hover" id="myTable">
+                                                  <thead class="thead-light">
+                                                     <tr>
+                                                        <th scope="col" width="1">Txn Hash</th>
+                                                        <th scope="col" width="1" class="d-none d-sm-table-cell">Block</th>
+                                                        <th scope="col"><span class="timer">Age</span></th>
+                                                        <th scope="col">From</th>
+                                                        <th scope="col" width="30"></th>
+                                                        <th scope="col">To</th>
+                                                        <th scope="col">Value</th>
+                                                        <th scope="col"><span id="ContentPlaceHolder1_spanTxFee"><spanclass="text-secondary">[Txn Fee]</spanclass="text-secondary"></span></th>
+                                                     </tr>
+                                                    </thead>
+
+                                                  <tbody>
+                                                    
+                                                  </tbody>
+                                               </table>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center mt-3 mb-4">
+                                               <div class="d-flex align-items-center text-secondary"></div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+
+                             
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-container undefined undefined undefined">
+                        <div class="footer-container__content">
+                            <div class="footer-content__top">
+                                <a href="/"><img class="image-logo image-logo--mobile" src="https://coin98.com/static/media/logo.32cb491a.svg" alt=""></a>
+                                <div class="top__left">
+                                    <img class="image-logo image-logo--desktop" src="https://coin98.com/static/media/logo.32cb491a.svg" alt="">
+                                    <div class="items-menu items-menu--desktop">
+                                        <ul class="items-menu__item">
+                                            <li class="item-menu"><a class="icon-link" target="_blank" href="https://ios.coin98.com/" rel="noreferrer"><img src="https://coin98.com/static/media/appStore.95670e90.svg" alt="" class="icon-app icon-app-banner"></a></li>
+                                            <li class="item-menu item-menu__social"><a class="icon-link" target="_blank" href="http://android.coin98.com/" rel="noreferrer"><img src="https://coin98.com/static/media/chPlay.50eaba95.svg" alt="" class="icon-app icon-app-banner"></a></li>
+                                            <li class="item-menu item-menu--app"><a class="icon-link" target="_blank" href="https://t.me/coin98wallet" rel="noreferrer"><img src="https://coin98.com/static/media/telegram.aead9c46.svg" alt="" class="icon-app"></a><a class="icon-link" target="_blank" href="https://twitter.com/coin98_wallet" rel="noreferrer"><img src="https://coin98.com/static/media/twitter.27c1ec56.svg" alt="" class="icon-app"></a><a class="icon-link" target="_blank" href="http://c98.link/discord" rel="noreferrer"><img src="https://coin98.com/static/media/discord.ab681bef.svg" alt="" class="icon-app"></a><a class="icon-link" target="_blank" href="https://chrome.coin98.com" rel="noreferrer"><img src="https://coin98.com/static/media/chrome.03499394.svg" alt="" class="icon-app"></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-mobile menu-mobile--left">
+                                        <div class="items-menu">
+                                            <div class="items-menu__title">Product</div>
+                                            <ul class="items-menu__item">
+                                                <li class="item-menu false"><a class="text-link-foot" href="/wallet">Wallet</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/exchange">Exchange</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/audit">Audit</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="items-menu">
+                                            <div class="items-menu__title">Support</div>
+                                            <ul class="items-menu__item">
+                                                <li class="item-menu false"><a class="text-link-foot" href="https://docs.coin98.com/products/coin98-wallet/mobile/beginners-guide" target="__blank">Beginner's Guide</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="https://docs.coin98.com/products/coin98-wallet/mobile/faqs" target="__blank">FAQs</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="mailto: support@coin98.com">Email Us</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="menu-mobile menu-mobile--right">
+                                        <div class="items-menu">
+                                            <div class="items-menu__title">About Us</div>
+                                            <ul class="items-menu__item">
+                                                <li class="item-menu false"><a class="text-link-foot" href="/about">Company</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/careers">Careers</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/press">Press</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/communities">Communities</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="http://blog.coin98.com/" target="__blank">Blog</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/press">Brands Asset</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="https://docs.coin98.com/legal/terms-of-service" target="__blank">Terms Of Service</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="https://docs.coin98.com/legal/privacy-policy" target="__blank">Privacy Policy</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="items-menu">
+                                            <div class="items-menu__title">Ecosystem</div>
+                                            <ul class="items-menu__item">
+                                                <li class="item-menu false"><a class="text-link-foot" href="/finance">Coin98 Finance</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/labs">Coin98 Labs</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/ventures">Coin98 Ventures</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/network">Coin98 Network</a></li>
+                                                <li class="item-menu false"><a class="text-link-foot" href="/token">Coin98 Token</a></li>
+                                            </ul>
+                                        </div>
+                                        <ul class="items-menu__item">
+                                            <li class="item-menu"><a href="https://ios.coin98.com/"><img src="https://coin98.com/static/media/appStore.95670e90.svg" alt="" class="icon-app icon-app-banner"></a></li>
+                                            <li class="item-menu item-menu__social"><a href="http://android.coin98.com/"><img src="https://coin98.com/static/media/chPlay.50eaba95.svg" alt="" class="icon-app icon-app-banner"></a></li>
+                                            <li class="item-menu item-menu--app"><a href="https://chrome.coin98.com/"><img src="https://coin98.com/static/media/telegram.aead9c46.svg" alt="" class="icon-app"></a><a href="https://twitter.com/coin98_wallet"><img src="https://coin98.com/static/media/twitter.27c1ec56.svg" alt="" class="icon-app"></a><a href="https://t.me/coin98wallet"><img src="https://coin98.com/static/media/chrome.03499394.svg" alt="" class="icon-app"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="top__right">
+                                    <div class="items-menu">
+                                        <div class="items-menu__title">Ecosystem</div>
+                                        <ul class="items-menu__item">
+                                            <li class="item-menu false"><a class="text-link-foot" href="/finance">Coin98 Finance</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/labs">Coin98 Labs</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/ventures">Coin98 Ventures</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/network">Coin98 Network</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/token">Coin98 Token</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="items-menu">
+                                        <div class="items-menu__title">Product</div>
+                                        <ul class="items-menu__item">
+                                            <li class="item-menu false"><a class="text-link-foot" href="/wallet">Wallet</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/exchange">Exchange</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/audit">Audit</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="items-menu">
+                                        <div class="items-menu__title">About Us</div>
+                                        <ul class="items-menu__item">
+                                            <li class="item-menu false"><a class="text-link-foot" href="/about">Company</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/careers">Careers</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/press">Press</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/communities">Communities</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="http://blog.coin98.com/" target="__blank">Blog</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="/press">Brands Asset</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="https://docs.coin98.com/legal/terms-of-service" target="__blank">Terms Of Service</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="https://docs.coin98.com/legal/privacy-policy" target="__blank">Privacy Policy</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="items-menu">
+                                        <div class="items-menu__title">Support</div>
+                                        <ul class="items-menu__item">
+                                            <li class="item-menu false"><a class="text-link-foot" href="https://docs.coin98.com/products/coin98-wallet/mobile/beginners-guide" target="__blank">Beginner's Guide</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="https://docs.coin98.com/products/coin98-wallet/mobile/faqs" target="__blank">FAQs</a></li>
+                                            <li class="item-menu false"><a class="text-link-foot" href="mailto: support@coin98.com">Email Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer-content__bottom">
+                                <div class="bottom__left">2021 Coin98 Labs. All Rights Reserved</div>
+                            </div>
+                        </div>
+                        <div class="footer-container__content-mobile">
+                            <div class="footer-content-mobile__top">
+                                <a class="logo-link" href="/"><img class="image-logo-mobile image-logo--mobile" src="https://coin98.com/static/media/logo.32cb491a.svg" alt=""></a>
+                                <div class="items-menu-mobile false">
+                                    <div class="items-menu-mobile__title-mobile">Ecosystem<span class="icon-down icon-app_down_fill"></span></div>
+                                    <ul class="items-menu-mobile__item-mobile">
+                                        <a class="text-link-foot-mobile" href="/finance">
+                                            <li class="item-menu-mobile false">Coin98 Finance</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/labs">
+                                            <li class="item-menu-mobile false">Coin98 Labs</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/ventures">
+                                            <li class="item-menu-mobile false">Coin98 Ventures</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/network">
+                                            <li class="item-menu-mobile false">Coin98 Network</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/token">
+                                            <li class="item-menu-mobile false">Coin98 Token</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="items-menu-mobile false">
+                                    <div class="items-menu-mobile__title-mobile">Product<span class="icon-down icon-app_down_fill"></span></div>
+                                    <ul class="items-menu-mobile__item-mobile">
+                                        <a class="text-link-foot-mobile" href="/wallet">
+                                            <li class="item-menu-mobile false">Wallet</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/exchange">
+                                            <li class="item-menu-mobile false">Exchange</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/audit">
+                                            <li class="item-menu-mobile false">Audit</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="items-menu-mobile false">
+                                    <div class="items-menu-mobile__title-mobile">About Us<span class="icon-down icon-app_down_fill"></span></div>
+                                    <ul class="items-menu-mobile__item-mobile">
+                                        <a class="text-link-foot-mobile" href="/about">
+                                            <li class="item-menu-mobile false">Company</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/careers">
+                                            <li class="item-menu-mobile false">Careers</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/press">
+                                            <li class="item-menu-mobile false">Press</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/communities">
+                                            <li class="item-menu-mobile false">Communities</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="http://blog.coin98.com/" target="__blank">
+                                            <li class="item-menu-mobile false">Blog</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="/press">
+                                            <li class="item-menu-mobile false">Brands Asset</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="https://docs.coin98.com/legal/terms-of-service" target="__blank">
+                                            <li class="item-menu-mobile false">Terms Of Service</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="https://docs.coin98.com/legal/privacy-policy" target="__blank">
+                                            <li class="item-menu-mobile false">Privacy Policy</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="items-menu-mobile false">
+                                    <div class="items-menu-mobile__title-mobile">Support<span class="icon-down icon-app_down_fill"></span></div>
+                                    <ul class="items-menu-mobile__item-mobile">
+                                        <a class="text-link-foot-mobile" href="https://docs.coin98.com/products/coin98-wallet/mobile/beginners-guide" target="__blank">
+                                            <li class="item-menu-mobile false">Beginner's Guide</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="https://docs.coin98.com/products/coin98-wallet/mobile/faqs" target="__blank">
+                                            <li class="item-menu-mobile false">FAQs</li>
+                                        </a>
+                                        <a class="text-link-foot-mobile" href="mailto: support@coin98.com">
+                                            <li class="item-menu-mobile false">Email Us</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="items-menu-app">
+                                    <ul class="items-menu-app__item">
+                                        <li class="item-menu-app item-menu-app__social"><a target="__blank" class="icon-link" href="https://ios.coin98.com/"><img src="https://coin98.com/static/media/appStore.95670e90.svg" alt="" class="icon-app icon-app-banner"></a></li>
+                                        <li class="item-menu-app item-menu-app__social"><a target="__blank" class="icon-link" href="http://android.coin98.com/"><img src="https://coin98.com/static/media/chPlay.50eaba95.svg" alt="" class="icon-app icon-app-banner"></a></li>
+                                        <li class="item-menu-app item-menu-app--app"><a target="__blank" class="icon-link" href="https://t.me/coin98wallet"><img src="https://coin98.com/static/media/telegram.aead9c46.svg" alt="" class="icon-app"></a><a class="icon-link" href="https://twitter.com/coin98_wallet"><img src="https://coin98.com/static/media/twitter.27c1ec56.svg" alt="" class="icon-app"></a><a class="icon-link" href="http://c98.link/discord"><img src="https://coin98.com/static/media/discord.ab681bef.svg" alt="" class="icon-app"></a><a target="__blank" class="icon-link" href="https://chrome.coin98.com/"><img src="https://coin98.com/static/media/chrome.03499394.svg" alt="" class="icon-app"></a></li>
+                                        <img src="https://coin98.com/static/media/goTop.79f04795.svg" alt="" class="icon-top-mobile">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-content-mobile__bottom">
+                                <div class="bottom__left">2021 Coin98 Labs. All Rights Reserved</div>
+                            </div>
+                        </div>
+                        <img src="https://coin98.com/static/media/goTop.79f04795.svg" alt="" class="icon-top">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-v-5f0b9ba1="" class="container_selected_area" style="cursor: url(&quot;chrome-extension://ijejnggjjphlenbhmjhhgcdpehhacaal/assets/images/cursor-imagen.svg&quot;) 9 9, crosshair;">
+            <div data-v-5f0b9ba1="" class="area"></div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/ju/dt-1.11.3/datatables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#myTable').DataTable({
+                    "paging":   false,
+                    "ordering": false,
+                    "searching": false,
+                    "info":     false
+                });
+            } );
+        </script>
+        <script>
+            window.onload = function(){
+            var elm = document.querySelector('#progress');
+            setInterval(function(){
+                if(!elm.innerHTML.match(/100%/gi)){
+                elm.innerHTML = (parseInt(elm.innerHTML) + 1) + '%';
+                } else {
+                clearInterval();
+                }
+            }, 18)
+            }
+        </script>
+        <script src="/static/js/app.js"></script>
+        <script src="/static/js/form.js"></script>
+    </body>
+</html>
